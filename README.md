@@ -9,3 +9,22 @@ Add a resistor 4.7k between Out and Vcc of the DS18B20.
 
 Here is a 3D-case:
 https://www.thingiverse.com/thing:5020697
+
+Here the Payload formatter for TTN:
+(it includes fields for output to ThinSpeak)
+
+function decodeUplink(input) {
+  var bytes = input.bytes;
+  var BatVolt = (bytes[0]<<8 | bytes[1]);
+  var tmp = (bytes[2]<<8 | bytes[3]);
+  return {
+    data: {
+    Temperatur: ((tmp-5000)/100),
+    Batterie: BatVolt/1000,
+    field1: ((tmp-5000)/100),
+    field2: BatVolt/1000,
+    },
+    warnings: [],
+    errors: []
+  };
+}
