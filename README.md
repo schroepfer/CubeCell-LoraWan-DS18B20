@@ -6,3 +6,6 @@ You must edit the OTAA parameter for TTN V3!
 The Input-Pin for the DS18B20 is GPIO5 on the CubeCell, 
 Vext of the CubeCell ist VCC for the DS18B20.
 Add a resistor 4.7k between Out and Vcc of the DS18B20.
+
+Here is a 3D-case:
+https://www.thingiverse.com/thing:5020697
